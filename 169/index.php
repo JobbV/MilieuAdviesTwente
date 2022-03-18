@@ -80,6 +80,7 @@ else
 {
 $vragen = $_GET["vragen"];
    toonVragen($vragen);
+
 }
     ?>
 </body>
