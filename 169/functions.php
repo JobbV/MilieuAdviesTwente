@@ -2,30 +2,19 @@
 <?php
 include('database.php');
 
-echo "        
-<table>
-<tr>
-<th>Id</th>
-<th>Vraag</th>
-<th>Antwoord</th>
-</tr>";
-
 
 function toonResultaat(){
 
 while ($rij = $result->fetch()) {
     $id  = $rij["Id"];
-    $vraag      = $rij["Vraag"];
-    $antwoord     = $rij["Antwoord"];
+    $vraag      = $rij["Vragen"];
+    $antwoorden     = $rij["antwoorden"];
+
     echo "
-    <tr>
-    <td>$id</td>
-    <td>$vraag</td>
-    <td>$antwoord</td>
-    </tr></table>
-      <br>";
-      
-      
+    $id
+    $vragen
+    $antwoorden
+      <br>";    
 }
 }
 
@@ -33,17 +22,14 @@ function toonVragen($vragen){
 
 foreach ($vragen as $key=>$rij) {
     $id  = $rij["id"];
-    $vraag       = $rij["vraag"];
-    $antwoord      = $rij["antwoord"];
+    $vragen       = $rij["vragen"];
+    $antwoorden    = $rij["antwoorden"];
     echo "
-    <tr>
-    <td>$id</td>
-    <td>$vraag</td>
-    <td>$antwoord</td>
-    </tr>
+    
+    $id
+    $vragen
+    $antwoorden
       <br>";
-      
-
 }
 echo "</table>";
 }
@@ -51,12 +37,12 @@ echo "</table>";
 
 function toonAllevragen()
 {
-$sql        = "SELECT vraag, antwoord, id
+$sql        = "SELECT vragen, antwoorden, id
 FROM faq 
-ORDER BY vraag, antwoord, id";
+ORDER BY vragen, antwoorden, id";
 
 // hier maakt hij rijen aan
-$pdo = maakVraagpdo();
+$pdo = maakVragenpdo();
 $result     = $pdo->query($sql);
 
 
@@ -69,18 +55,18 @@ toonVragen($vragen);
 }
 
 
-function toonVraag($vraag)
+function toonVraag($vragen)
 {
     //Filter - gebruik  prepare
  
-    $sql = "SELECT vraag, antwoord, id 
+    $sql = "SELECT vragen, antwoorden, id 
         FROM faq
-        WHERE Vraag=:vraag 
-        ORDER BY Vraag, Antwoord, Id";
-    $pdo = maakVraagpdo();
+        WHERE Vragen=:vragen
+        ORDER BY Vragen, antwoorden, Id";
+    $pdo = maakVragenpdo();
     $statement = $pdo->prepare($sql);
-    $statement->bindParam(":vraag", $param_vraag);
-    $param_vraag = $vraag;
+    $statement->bindParam(":vragen", $param_vraag);
+    $param_vragen = $vragen;
     $statement->execute();
 
 
