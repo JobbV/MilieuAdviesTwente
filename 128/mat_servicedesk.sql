@@ -1,4 +1,5 @@
-mysql> CREATE DATABASE mat_servicedesk;
+mysql> 
+CREATE DATABASE mat_servicedesk;
 
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
