@@ -79,11 +79,7 @@ if (empty($_GET["vragen"])) {
 else 
 {
 $vragen = $_GET["vragen"];
-<<<<<<< HEAD
-   toonVragem($vragen);
-=======
    toonVragen($vragen);
->>>>>>> c4f92f872ec8fc15c329ad7207f755e9c63cf9d9
 }
     ?>
 </body>
