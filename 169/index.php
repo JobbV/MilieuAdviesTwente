@@ -16,7 +16,7 @@ include('functions.php');
 
 // als het continent leeg is voer die de code hier onder uit
 // als continent niet gevuld is pakt die de if 
-if (empty($_GET["vraag"])) {
+if (empty($_GET["vragen"])) {
 
     toonAllevragen();
 } 
@@ -26,8 +26,8 @@ if (empty($_GET["vraag"])) {
 // als continent wel gevuld is pakt die deze code
 else 
 {
-$vraag = $_GET["vraag"];
-   toonVraag($vraag);
+$vragen = $_GET["vragen"];
+   toonVragen($vragen);
 }
     ?>
 </body>
