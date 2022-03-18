@@ -10,7 +10,7 @@
 <body>
 <section class="py-60">
   <div class="container text-control-1">
-    <h2>FAQ about Vacation Travel Package</h2>
+    <h2>FAQ </h2>
     <div class="faqs-section">
       <div class="faq accordion">
         <div class="question-wrapper">
