@@ -33,16 +33,13 @@ echo "
 // Toon gegevens
 function toongegevens($gegevens){
     foreach ($gegevens as $key=>$rij) {
-        $id  = $rij["id"];
-        $username       = $rij["username"];
-        $onderwerp      = $rij["onderwerp"];
-        $tekstbericht      = $rij["tekstbericht"];
+        $vragen          = $rij["vragen"];
+        $antwoorden      = $rij["antwoorden"];
+
         echo "
         <tr>
-        <td>$id</td>
-        <td>$username</td>
-        <td>$onderwerp</td>
-        <td>$tekstbericht</td>
+        <td>$vragen</td>
+        <td>$antwoorden</td>
         <td>
         <a href='view.php'><i class='fa fa-eye'></i></a>
         <a href='answer.php'><i class='fa fa-edit'></i></a>
