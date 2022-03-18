@@ -2,7 +2,7 @@
 
 // hier noem je welke database server, gebruikersnaam, wachtwoord en database naam
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', '');
+define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'mat_servicedesk');
 

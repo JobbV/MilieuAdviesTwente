@@ -1,3 +1,5 @@
+mysql> CREATE DATABASE mat_servicedesk;
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
@@ -31,7 +33,6 @@ CREATE TABLE `faq` (
   `ID` int(11) NOT NULL,
   `Vragen` varchar(255) NOT NULL,
   `Antwoorden` varchar(255) NOT NULL,
-  `Nummer` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
