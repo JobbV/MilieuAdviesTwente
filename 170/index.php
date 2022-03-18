@@ -10,14 +10,41 @@
 <body>
     
 <div class="form">
-    <form action="submit.php" method="post">
+    <form action="" method="post">
     <br><textarea id="vraag" name="vraag" placeholder="Vraag" rows="4" cols="50"></textarea>
     <br><textarea id="antwoord" name="antwoord" placeholder="Antwoord" rows="4" cols="50"></textarea>
     <br><input type="submit" class="btn btn-success" name="btn" value="Verzenden">
 </div>
 </form>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<?php
+
+$con = mysqli_connect('localhost','root','','mat_servicedesk');  
+
+if($con){
+  echo "";
+}
+else{
+  echo "connect failed";
+}
+
+if(isset($_POST['btn'])){
+   $vraag = $_POST['vraag'];
+   $antwoord = $_POST['antwoord'];
+
+   $sql = "INSERT INTO faq(vragen,antwoorden) 
+   values('$vraag','$antwoord')" or die();
+
+   if ($con->query($sql)===TRUE) {
+     echo "<script>alert('Vraag succesvol toegevoegd!');</script>";
+   }
+   else{
+     echo "Error: " . $sql . "<br>" . $con->error;
+   }
+ }
+
+ $con->close();
+?>
 
 </body>
 </html>
