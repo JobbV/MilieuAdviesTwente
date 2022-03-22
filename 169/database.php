@@ -2,8 +2,8 @@
 
 // hier noem je welke database server, gebruikersnaam, wachtwoord en database naam
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_USERNAME', 'mat_admin');
+define('DB_PASSWORD', 'zu7-(68N3P.tMplY');
 define('DB_NAME', 'mat_servicedesk');
 
  // hier proberen we connectie te maken met de database
