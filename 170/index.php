@@ -25,9 +25,46 @@
 
 <?php
 
+
 include 'functions.php';
 
+session_start();
+
 $con = mysqli_connect('localhost','root','','mat_servicedesk');  
+
+if(isset($_POST['btn'])) {
+  $vraag = $_POST['vraag'];
+  $antwoord = $_POST['antwoord'];
+  $dateofbirth = date('Y-m-d', strtotime( $_POST['dateofbirth']));
+
+  $query = "INSERT INTO faq (name,dateofbirth) VALUES ('$vraag','$antwoord','$dateofbirth')";
+  $query_run = mysql_query($con, $query);
+
+  if($query_run) {
+    $_SESSION['status'] = "Date values Inserted!";
+    header("Location: index.php");
+  }
+  else {
+    $_SESSION['status'] = "Date values Inserting failed :(";
+    header("Location: index.php");
+  }
+
+}
+
+if($con){
+  echo "";
+}
+else{
+  echo "connect failed";
+}
+
+if(isset($_POST['btn'])){
+   $vraag = $_POST['vraag'];
+   $antwoord = $_POST['antwoord'];
+
+
+   $sql = "INSERT INTO faq(vragen,antwoorden) 
+   values('$vraag','$antwoord')" or die();
 
 if($con){
   echo "";
