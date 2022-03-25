@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Voorpagina</title>
+    <title>Vragen toevoegen</title>
 </head>
 <body>
     
@@ -19,6 +19,8 @@
 
 <?php
 
+include 'functions.php';
+
 $con = mysqli_connect('localhost','root','','mat_servicedesk');  
 
 if($con){
@@ -31,6 +33,7 @@ else{
 if(isset($_POST['btn'])){
    $vraag = $_POST['vraag'];
    $antwoord = $_POST['antwoord'];
+
 
    $sql = "INSERT INTO faq(vragen,antwoorden) 
    values('$vraag','$antwoord')" or die();
