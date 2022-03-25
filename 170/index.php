@@ -13,12 +13,11 @@
     <form action="" method="post">
     <br><textarea id="vraag" name="vraag" placeholder="Vraag" rows="4" cols="50"></textarea>
     <br><textarea id="antwoord" name="antwoord" placeholder="Antwoord" rows="4" cols="50"></textarea>
-    <br><input type="submit" class="btn btn-success" name="btn" value="Verzenden">
+    <br><br><br><input type="submit" class="btn btn-success" name="btn" value="Verzenden">
 </div>
 
 <div class="form-group">
-  <label for="">Date of Birth</label>
-  <input type="date" name="dateofbirth" class="form-control" />
+  <input type="date" name="dateofbirth" placeholder="Dateofbirth" class="form-group" />
 </div>
 
 
