@@ -15,6 +15,13 @@
     <br><textarea id="antwoord" name="antwoord" placeholder="Antwoord" rows="4" cols="50"></textarea>
     <br><input type="submit" class="btn btn-success" name="btn" value="Verzenden">
 </div>
+
+<div class="form-group">
+  <label for="">Date of Birth</label>
+  <input type="date" name="dateofbirth" class="form-control" />
+</div>
+
+
 </form>
 
 <?php
@@ -43,6 +50,10 @@ if(isset($_POST['btn'])){
    }
  }
 
+
+
+
+ 
  $con->close();
 ?>
 
